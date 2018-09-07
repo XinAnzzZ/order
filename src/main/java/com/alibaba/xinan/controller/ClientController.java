@@ -1,10 +1,11 @@
 package com.alibaba.xinan.controller;
 
+import com.alibaba.xinan.client.ProductClient;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * @author XinAnzzZ
@@ -14,13 +15,13 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class ClientController {
 
-    @Autowired
-    private RestTemplate restTemplate;
+    @Resource
+    private ProductClient productClient;
 
     @GetMapping("/product/msg")
     public String getProductMsg() {
-        String s = restTemplate.getForObject("http://PRODUCT/test", String.class);
-        log.info(s);
-        return s;
+        String response = productClient.productTest();
+        log.info("s = {}", response);
+        return response;
     }
 }

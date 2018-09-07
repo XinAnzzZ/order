@@ -63,6 +63,17 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
+
+        <!-- 通过查看官方文档
+        http://cloud.spring.io/spring-cloud-static/Finchley.SR1/multi/multi_spring-cloud-feign.html#netflix-feign-starter
+            发现，Finchley.SR1 版本的spring cloud所使用的feign的artifactId为spring-cloud-starter-openfeign，
+            而不是spring-cloud-starter-feign，具体为什么，老子也不懂
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
