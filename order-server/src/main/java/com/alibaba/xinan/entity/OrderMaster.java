@@ -21,6 +21,8 @@ public class OrderMaster implements Serializable {
     @Id
     private String orderId;
 
+    private String buyerName;
+
     private String buyerPhone;
 
     private String buyerAddress;
