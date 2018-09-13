@@ -32,56 +32,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+        <order.common.version>0.0.1-SNAPSHOT</order.common.version>
+        <product.version>0.0.1-SNAPSHOT</product.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-
-        <!-- 通过查看官方文档
-        http://cloud.spring.io/spring-cloud-static/Finchley.SR1/multi/multi_spring-cloud-feign.html#netflix-feign-starter
-            发现，Finchley.SR1 版本的spring cloud所使用的feign的artifactId为spring-cloud-starter-openfeign，
-            而不是spring-cloud-starter-feign，具体为什么，老子也不懂
-        -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -91,6 +45,16 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.xinan</groupId>
+                <artifactId>product-client</artifactId>
+                <version>${product.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.xinan</groupId>
+                <artifactId>order-common</artifactId>
+                <version>${order.common.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
